@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body{
+    margin: 0;
+    font-family: system-ui;
+    background-color: #0A0819;
+    color: #fff;
+}
+
+header{
+    /* chiều dọc 100% màng hình */
+    height: 50px;
+    position: relative;
+}
+
+header::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    content: '';
+    background-image: linear-gradient(to top,
+    #0A0819, transparent
+    );
+}
+
+header h1{
+    font-family: 'Lobster', cursive;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: xxx-large;
+}
+
+.menuTop .logo img{
+    width: 60px;
+    padding: 25px;
+}
+
+.menuTop{
+    width: 1200px;
+    padding: 20px;
+    max-width: calc(100vw - 40px);
+    margin: auto;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 10% auto;
+    position: relative;
+}
+
+.menuTop .menu{
+    list-style: none;
+    padding: 0;
+    text-align: right;
+}
+
+.menuTop .menu li{
+    display: inline-block;
+    padding: 5px 30px;
+    text-shadow: 0 0 20px #000;
+}
+
+.menuTop .menu li a{
+    color: white;
+    text-decoration: none;
+}
+
+.menuTop .menu li a:hover{
+    color: rgb(141, 141, 141);
+    text-decoration: none;
+}
+
+.container{
+    width: 1200px;
+    padding: 20px;
+    max-width: calc(100vw - 40px);
+    margin: 150px auto 0;
+}
+
+.list{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    column-gap: 20px;
+}
+.item .img img{
+    height:200px;
+    transition: 0.5s;
+}
+.item .img{
+    background-image: linear-gradient(to top right,
+        #D89CD1, #D499D4
+    );
+    padding:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+.item .content{
+    background-color: #ffffff24;
+    border-radius: 30px;
+    padding:50px 30px;
+    transform: translate(0,-50px);
+    backdrop-filter: blur(20px);
+    color:#fff;
+}
+.title{
+    font-size: x-large;
+}
+.item .content .des{
+    opacity: .7;
+    margin:10px 0;
+}
+.item .content .price{
+    font-size: large;
+    letter-spacing: 3px;
+    margin-bottom:10px;
+}
+.item .content .add{
+    background-color: #B192EF;
+    padding:20px;
+    color:#fff;
+    width:100%;
+    border:none;
+    border-radius: 30px;
+}
+.item:hover img{
+    transform: translate(0,-50px);
+}
+.listPage{
+    padding:10px;
+    text-align: center;
+    list-style: none;
+}
+.listPage li{
+    background-color: #ffffffBD;
+    padding:20px;
+    display: inline-block;
+    margin:0 10px;
+    cursor: pointer;
+}
+.listPage .active{
+    background-color: #B192EF;
+    color:#fff;
+}
+
+
+
+footer{
+    background-color: #000;
+    margin-top: 50px;
+    padding: 100px 0;
+}
+
+footer .content{
+    width: 1200px;
+    padding: 20px;
+    max-width: calc(100vw - 40px);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 40%;
+}
+
+footer ul{
+    padding: 0;
+}
+
+footer li{
+    padding: 10px;
+    list-style: none;
+    color: #ffffff4D;
+}
+
+footer li:nth-child(1), footer h3{
+    font-family: 'Lobster', cursive;
+    color: #fff;
+    font-weight: bold;
+}
+
+footer textarea, footer input{
+    display: block;
+    border: none;
+    width: 100%;
+    background-color: #eee;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    /* độ mờ nhòe */
+    opacity: 0.8;
+}
+
+footer button{
+    width: 100%;
+    border: none;
+    display: block;
+    padding: 20px 0;
+    border-radius: 4px;
+    background-color: red;
+    color: #fff;
+}
+
+.toggleMenu{
+    display: none;
+}
+@media screen and (max-width: 820px) {
+
+    header{
+        height: 50vh;
+    }
+
+    
+    .fare{
+        column-gap: 5px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+     
+    .fare{
+        grid-template-columns: 100%;
+    }
+    footer{
+        padding:10px;
+    }
+    footer .content{
+        padding:0;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+    }
+    footer .itemFooter:nth-child(4){
+        grid-column-start: 1;
+        grid-column-end: 4;
+        padding-right:20px;
+    }
+    .menuTop{
+        position: fixed;
+        padding:20px;
+        z-index: 5;
+         background-color: #ffffff4D;
+    }
+    .menuTop .logo img{
+        width:30px;
+    }
+    .menuTop .menu{
+        position: fixed;
+        left:0;
+        top:0;
+        height:100%;
+        background-color: #ffffff4D;
+        backdrop-filter: blur(10px);
+        z-index: 6;
+        text-align: left;
+        width:80%;
+        margin: 0;
+        transition: 0.5s;
+        transform: translate(-100%);
+    }
+    .menuTop .menu li{
+        display: block;
+        padding:20px;
+    }
+    .menuTop .menu.active{
+        transform: translate(0);
+    }
+    .toggleMenu{
+        display: block;
+        text-align: right;
+        text-shadow: 0 0 10px #000;
+    }
+}
